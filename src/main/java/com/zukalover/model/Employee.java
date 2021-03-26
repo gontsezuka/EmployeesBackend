@@ -5,17 +5,25 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="employees")
 public class Employee {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="employee_id")
 	private Long employeeId;
+	@Column(name="name")
 	private String name;
+	@Column(name="email")
 	private String email;
+	@Column(name="jobtitle")
 	private String jobTitle;
+	@Column(name="phone")
 	private String phone;
+	@Column(name="url")
 	private String url;
 	@Column(nullable=false,updatable=false)
 	private String employeeCode;
