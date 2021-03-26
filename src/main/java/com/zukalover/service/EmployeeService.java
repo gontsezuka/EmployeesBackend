@@ -2,6 +2,7 @@ package com.zukalover.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -65,6 +66,7 @@ public class EmployeeService {
 	{
 		Employee employeeReturn = new Employee();
 		try {
+			employee.setEmployeeCode(UUID.randomUUID().toString());
 			employeeReturn = employeeRepository.save(employee);
 		}catch(Exception e)
 		{
