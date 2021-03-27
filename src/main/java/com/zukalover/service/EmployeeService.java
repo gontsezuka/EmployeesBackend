@@ -124,4 +124,22 @@ public class EmployeeService {
 			LOGGER.error(e.getMessage());
 		}
 	}
+	
+	/**
+	 * @author Gontse Mochoana
+	 * 
+	 * @param employee
+	 * @return
+	 */
+	public Employee updateReturn(Employee employee)
+	{
+		Employee employeeReturned = new Employee();
+		try {
+			employee = employeeRepository.save(employee);
+		}catch(Exception e)
+		{
+			LOGGER.error(e.getMessage());
+		}
+		return employeeReturned;
+	}
 }
